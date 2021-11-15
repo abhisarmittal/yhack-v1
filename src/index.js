@@ -1,17 +1,56 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './index.css'
+import PuzzlePopup from './puzzlePopup.js'
+import ApplyPopup from './applyPopup.js'
+
+class PopupButtons extends React.Component {
+	state = {
+		puzzleSeen: false,
+		applySeen: false,
+	};
+
+	toggleApplyPop = () => {
+		if (this.state.puzzleSeen) {
+			this.setState({
+				puzzleSeen: !this.state.puzzleSeen
+			});
+		} else {
+			this.setState({
+				applySeen: !this.state.applySeen
+			});
+		}
+	};
+
+	togglePuzzlePop = () => {
+		if (this.state.applySeen) {
+			this.setState({
+				applySeen: !this.state.applySeen
+			});
+		} else {
+			this.setState({
+				puzzleSeen: !this.state.puzzleSeen
+			});
+		}
+	};
+
+	render() {
+		return (
+			<div id="buttons-div">
+				<div className="btn" onClick={this.toggleApplyPop}>
+					<button>Apply</button>
+				</div>
+				<div className="btn" onClick={this.togglePuzzlePop}>
+					<button>Puzzle</button>
+				</div>
+			{this.state.applySeen ? <ApplyPopup toggle={this.toggleApplyPop} /> : null}
+			{this.state.puzzleSeen ? <PuzzlePopup toggle={this.togglePuzzlePop} /> : null}
+			</div>
+		);
+	}
+T}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<PopupButtons />,
+	document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
