@@ -26,7 +26,7 @@ input { display: table-cell; }
 
 #puzzle-div {
 	width: min(800px, 80%);
-	height: 400px;
+	height: 600px;
 	border: solid 2px #000000;
 	align-items: center;
 	position: absolute;

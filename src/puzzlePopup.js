@@ -39,8 +39,10 @@ export default class PuzzlePopup extends React.Component {
 				<img src={image} width="500px" alt="puzzle_image"/>
 				<div class="container">
 				<form>
+					<p>
 					<label>Puzzle Answer: </label>
 					<input type="text"/>
+					</p>
 					<button type="button">Submit</button>
 				</form>
 				</div>
