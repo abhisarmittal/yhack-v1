@@ -37,11 +37,13 @@ export default class PuzzlePopup extends React.Component {
 				<span className="close" onClick={this.handleClick}>&times;</span>
 				<h1>Puzzle Title</h1>
 				<img src={image} width="500px" alt="puzzle_image"/>
+				<div class="container">
 				<form>
 					<label>Puzzle Answer: </label>
 					<input type="text"/>
 					<button type="button">Submit</button>
 				</form>
+				</div>
 			</div>
 		);
 	}

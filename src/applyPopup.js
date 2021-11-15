@@ -60,6 +60,7 @@ export default class applyPopup extends React.Component {
                             <option value="other">Other</option>
                         </select>
                     </p>
+					<button type="button">Submit</button>
                     </form>
                 </div>
 			</div>
