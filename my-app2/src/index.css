@@ -1,6 +1,28 @@
-. {
+.border {
 	box-sizing: border-box;
 }
+
+.tab {
+	margin-left: 10px;
+   }
+
+.container {
+	width: 500px;
+	clear: both;
+	display: grid;
+	grid-auto-flow: column;
+	grid-column-gap: 3px;
+  }
+  
+  .container input {
+	width: 100%;
+	clear: both;
+  }
+
+form  { display: table;      }
+p     { display: table-row;  }
+label { display: table-cell; }
+input { display: table-cell; }
 
 #puzzle-div {
 	width: min(800px, 80%);
@@ -8,5 +30,7 @@
 	border: solid 2px #000000;
 	align-items: center;
 	position: absolute;
+	padding-left: 20px;
+	padding-right: 50px;
 
 }
