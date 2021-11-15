@@ -12,13 +12,13 @@ class PopupButtons extends React.Component {
 
 	toggleApplyPop = () => {
 		this.setState({
-			seen: !this.state.applySeen
+			applySeen: !this.state.applySeen
 		});
 	};
 
 	togglePuzzlePop = () => {
 		this.setState({
-			seen: !this.state.puzzleSeen
+			puzzleSeen: !this.state.puzzleSeen
 		});
 	};
 
