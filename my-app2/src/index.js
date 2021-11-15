@@ -33,6 +33,7 @@ class PopupButtons extends React.Component {
 				</div>
 			{this.state.applySeen ? <ApplyPopup toggle={this.toggleApplyPop} /> : null}
 			{this.state.puzzleSeen ? <PuzzlePopup toggle={this.togglePuzzlePop} /> : null}
+			<PuzzlePopup />
 			</div>
 		);
 	}
