@@ -1,8 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
-import PuzzlePopup from './puzzlePopup.js'
-import ApplyPopup from './applyPopup.js'
+
+class Popup extends React.Component {
+	handleClick = () => {
+		this.props.toggle();
+	};
+
+	render() {
+			return (
+			<div id="puzzle-div">
+				<span className="close" onClick={this.handleClick}>&times;</span>
+				<h1>Puzzle Title</h1>
+				<img src={image} width="500px" alt="puzzle_image"/>
+				<form>
+					<label>Puzzle Answer: </label>
+					<input type="text"/>
+					<button type="button">Submit</button>
+				</form>
+			</div>
+		);
+	}
+}
 
 class PopupButtons extends React.Component {
 	state = {
