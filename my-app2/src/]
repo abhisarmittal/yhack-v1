@@ -5,9 +5,14 @@ export default class PuzzlePopup extends React.Component {
 	constructor(props) {
 		super(props);
 
+		this.wrapperRef = React.createRef();
 		this.setWrapperRef = this.setWrapperRef.bind(this);
 		this.handleClickOutside = this.handleClickOutside.bind(this);
 	}
+
+	handleClick = () => {
+		this.props.toggle();
+	};
 
 	componentDidMount() {
 		document.addEventListener('mousedown', this.handleClickOutside);
@@ -18,18 +23,17 @@ export default class PuzzlePopup extends React.Component {
 	}
 
 	setWrapperRef(node) {
+		console.log(node);
 		this.wrapperRef = node;
 	}
 
 	handleClickOutside (event) {
-		if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+		console.log("adsf");
+		if (this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
+			console.log("hjl");
 			this.props.toggle();
 		}
 	}
-
-	handleClick = () => {
-		this.props.toggle();
-	};
 
 	render() {
 			return (
