@@ -23,6 +23,7 @@ export default class PuzzlePopup extends React.Component {
 
 	handleClickOutside (event) {
 		if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+			new Promise(resolve => setTimeout(resolve, 20));
 			this.props.toggle();
 		}
 	}
