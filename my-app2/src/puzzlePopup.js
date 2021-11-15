@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import image from "./puzzle_image.jpg";
 
-class PuzzlePopup extends React.Component {
+export default class PuzzlePopup extends React.Component {
 	handleClick = () => {
 		this.props.toggle();
 	};
