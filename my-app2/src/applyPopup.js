@@ -2,13 +2,38 @@ import React, { Component } from 'react';
 import './index.css'
 
 export default class applyPopup extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.setWrapperRef = this.setWrapperRef.bind(this);
+		this.handleClickOutside = this.handleClickOutside.bind(this);
+	}
+
+	componentDidMount() {
+		document.addEventListener('mousedown', this.handleClickOutside);
+	}
+
+	componentWillUnmount() {
+		document.removeEventListener('mousedown', this.handleClickOutside);
+	}
+
+	setWrapperRef(node) {
+		this.wrapperRef = node;
+	}
+
+	handleClickOutside (event) {
+		if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+			this.props.toggle();
+		}
+	}
+
 	handleClick = () => {
 		this.props.toggle();
 	};
 
 	render() {
 		return (
-			<div id="puzzle-div">
+			<div id="puzzle-div" ref={this.setWrapperRef}>
 				<span className="close" onClick={this.handleClick}>&times;</span>
 				<h1>Application</h1>
 				<div class="container">
