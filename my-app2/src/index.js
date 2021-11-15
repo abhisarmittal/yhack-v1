@@ -7,19 +7,31 @@ import ApplyPopup from './applyPopup.js'
 class PopupButtons extends React.Component {
 	state = {
 		puzzleSeen: false,
-		applySeen: false
+		applySeen: false,
 	};
 
 	toggleApplyPop = () => {
-		this.setState({
-			applySeen: !this.state.applySeen
-		});
+		if (this.state.puzzleSeen) {
+			this.setState({
+				puzzleSeen: !this.state.puzzleSeen
+			});
+		} else {
+			this.setState({
+				applySeen: !this.state.applySeen
+			});
+		}
 	};
 
 	togglePuzzlePop = () => {
-		this.setState({
-			puzzleSeen: !this.state.puzzleSeen
-		});
+		if (this.state.applySeen) {
+			this.setState({
+				applySeen: !this.state.applySeen
+			});
+		} else {
+			this.setState({
+				puzzleSeen: !this.state.puzzleSeen
+			});
+		}
 	};
 
 	render() {
@@ -33,7 +45,6 @@ class PopupButtons extends React.Component {
 				</div>
 			{this.state.applySeen ? <ApplyPopup toggle={this.toggleApplyPop} /> : null}
 			{this.state.puzzleSeen ? <PuzzlePopup toggle={this.togglePuzzlePop} /> : null}
-			<PuzzlePopup />
 			</div>
 		);
 	}
