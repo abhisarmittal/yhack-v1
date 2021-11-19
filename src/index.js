@@ -48,7 +48,7 @@ class PopupButtons extends React.Component {
 			</div>
 		);
 	}
-T}
+}
 
 ReactDOM.render(
 	<PopupButtons />,
