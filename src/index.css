@@ -25,7 +25,7 @@ label { display: table-cell; }
 input { display: table-cell; }
 
 #puzzle-div {
-	width: min(800px, 80%);
+	width: max(800px, 80%);
 	height: 600px;
 	border: solid 2px #000000;
 	align-items: center;
@@ -34,3 +34,12 @@ input { display: table-cell; }
 	padding-right: 50px;
 
 }
+
+#scroll-div {
+	width: max(600px, 70%);
+	height: 300px;
+	border: solid 2px #000000;
+	align-items: center;
+	overflow-y: auto;
+}
+
