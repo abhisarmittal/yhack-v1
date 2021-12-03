@@ -19,6 +19,11 @@
 	clear: both;
   }
 
+  .btn {
+	margin: 1.3rem  1.3rem;
+	display: inline-block;
+  }
+
 form  { display: table;      }
 p     { display: table-row;  }
 label { display: table-cell; }
